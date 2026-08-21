@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>longcheckmail · dịch vụ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ===== CSS GIỮ NGUYÊN (chỉ bỏ phần pricing) ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #0b0e14;
+            color: #c8d6e5;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+        .snowflake {
+            position: absolute;
+            top: -20px;
+            color: #fff;
+            font-size: 1.2rem;
+            opacity: 0.7;
+            animation: fall linear infinite;
+            user-select: none;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0.2;
+            }
+        }
+        .music-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 10000;
+            background: #1f2e3c;
+            border: none;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            color: #4dd0e1;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .music-btn:hover {
+            transform: scale(1.1);
+            background: #2a3f4f;
+        }
+        .music-hint {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            color: #78909c;
+            font-size: 0.7rem;
+            background: #131a24;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid #2a3a4a;
+            z-index: 10000;
+            max-width: 200px;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: #131a24;
+            border-radius: 28px;
+            padding: 30px 28px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            border: 1px solid #2a3a4a;
+            position: relative;
+            z-index: 10;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #1f2e3c;
+            padding-bottom: 12px;
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .logo-area.hidden {
+            display: none;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #00e5ff, #00bcd4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo small {
+            font-size: 0.9rem;
+            font-weight: 300;
+            background: none;
+            -webkit-text-fill-color: #78909c;
+            color: #78909c;
+        }
+        .contact-mini {
+            font-size: 0.7rem;
+            color: #90a4ae;
+            margin-top: 2px;
+        }
+        .contact-mini i {
+            margin-right: 4px;
+            color: #4dd0e1;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+        .hamburger:hover {
+            background: #1f2e3c;
+        }
+        .hamburger .bar {
+            width: 28px;
+            height: 3px;
+            background: #e0f2f1;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+        .hamburger.visible {
+            display: flex;
+        }
+        .hamburger-menu {
+            display: no
